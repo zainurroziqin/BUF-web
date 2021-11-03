@@ -6,7 +6,7 @@ session_start();
 
 
 if(isset($_SESSION["login"])){
-	header ("Location: index.php");
+	header ("Location: dashboard.php");
 }
 
 require 'koneksi.php';
@@ -71,7 +71,7 @@ if (isset($_POST["submit"])) {
 
 			</div>
 
-			<button type="submit" class="btn">
+			<button type="submit" name="submit" class="btn">
 				Login
 			</button>
 
