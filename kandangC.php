@@ -1,7 +1,13 @@
 <?php
+session_start();
+if ( !isset($_SESSION["login"])){
+	header("Location: login.php");
+	exit;
+}
 require'koneksi.php';
 $kandang_c= query("SELECT * FROM kandang_c")
 ?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -31,7 +37,7 @@ $kandang_c= query("SELECT * FROM kandang_c")
 	<tr>
 		<th>Nomor</th>
 		<th>Tanggal</th>
-		<th>Nama</th>
+		<th>Diisi Oleh</th>
 		<th>Keterangan</th>
 		<th>Aksi</th>
 	</tr>

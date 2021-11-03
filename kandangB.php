@@ -1,7 +1,13 @@
 <?php
+session_start();
+if ( !isset($_SESSION["login"])){
+	header("Location: login.php");
+	exit;
+}
 require'koneksi.php';
 $kandang_b= query("SELECT * FROM kandang_b")
 ?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -23,7 +29,7 @@ $kandang_b= query("SELECT * FROM kandang_b")
 <a href="kandangD.php">Kandang D</a>
 <br><br>
 <a href="logout.php">logout</a>	
-<h1>Kandang B</h1>
+<h1>Daftar Kandang B</h1>
 <a href="tambahdatakandangB.php">Tambah Data Baru</a>
 <br><br>
 
