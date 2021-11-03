@@ -1,6 +1,12 @@
 <?php 
 session_start();
  ?>
+ <?php 
+if ( !isset($_SESSION["login"])){
+	header("Location: login.php");
+	exit;
+}
+  ?>
 <!-- tes github -->
 <!-- testing  -->
 <!DOCTYPE html>
