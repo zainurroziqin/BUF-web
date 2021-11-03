@@ -1,5 +1,9 @@
-<?php 	
+<?php
 session_start();
+?>
+
+<?php
+
 
 if(isset($_SESSION["login"])){
 	header ("Location: index.php");
@@ -36,15 +40,14 @@ if (isset($_POST["submit"])) {
 
 }
 
- ?>
 
-
+?>
 
 <!DOCTYPE html>
 <html>
 <head>
 	<title>Halaman Login</title>
-		<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" href="style.css">
 </head>
 </head>
 <body>
@@ -54,19 +57,28 @@ if (isset($_POST["submit"])) {
 <?php if (isset($error) ) : ?>
 	<p>username/password salah</p>
 <?php endif; ?>
+	<div class="flash-data1" data-flashdata1=""></div>
+		<form action="#" method="POST">
 
+			<div class="textbox">
+				<i class="fas fa-user"></i>
+				<input type="text" placeholder="Username" name="username" required autocomplete="off">
+			</div>
 
+			<div class="textbox">
+				<i class="fas fa-lock"></i>
+				<input type="password" placeholder="Password" name="password" required>
 
-<form action="" method="post">
-	
-<input type="text" name="username" placeholder="username">
-<br> <br>
-<input type="password" name="password" placeholder="password">
-<br><br>
-<button type="submit" name="submit">Login</button>
+			</div>
 
-</form>
+			<button type="submit" class="btn">
+				Login
+			</button>
+
+		</form>
+	</div>
 
 </div>
 </body>
 </html>
+
